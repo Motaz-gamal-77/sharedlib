@@ -8,6 +8,7 @@ def build(IMAGE_NAME, IMAGE_TAG){
     sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
 }
 
-def push(IMAGE_NAME, IMAGE_TAG){
-    sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+def push(IMAGE_NAME,USERNAME, IMAGE_TAG){
+    sh "docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
+    sh "docker push ${USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}"
 }
