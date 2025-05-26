@@ -13,7 +13,7 @@ def call() {
 
             stage("build Docker image"){
                 steps{
-                      sh "docker build -t python3:${BUILD_NUMBER} ."
+                    sh "docker build -t ${DOCKER_USER}/python3:${BUILD_NUMBER} ."
                 }
             } 
             stage("Login to Docker Hub"){
