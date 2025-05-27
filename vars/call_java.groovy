@@ -16,7 +16,7 @@ def call() {
             }
             stage("build java app image"){
                 steps{
-                    sh "docker build -t java3:v${BUILD_NUMBER} ."
+                    sh "docker build -t ${DOCKER_USER}/java3:${BUILD_NUMBER} ."
                 }
             }
             stage("Login to Docker Hub"){
