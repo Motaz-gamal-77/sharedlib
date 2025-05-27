@@ -26,7 +26,7 @@ def call() {
             }
             stage("push java app image"){
                 steps{
-                    sh "docker push ${DOCKER_USER}/java3:v${BUILD_NUMBER}"
+                    sh "docker push ${DOCKER_USER}/java3:${BUILD_NUMBER}"
                 }
             }
         }
